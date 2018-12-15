@@ -12,6 +12,7 @@ html, body {
   position: relative;
   width: 100vmin;
   height: 100vmin;
+  overflow: hidden;
   padding: 5%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -234,7 +235,6 @@ html, body {
     .container section:nth-of-type(2) {
       grid-column: span 2;
       grid-row: span 2;
-      display: inline-block;
       animation: spin 1.2s linear infinite; }
 
 @keyframes spin {
@@ -305,27 +305,28 @@ html, body {
     .container section:nth-of-type(3) {
       grid-column: span 4;
       grid-row: span 2;
-      overflow-y: hidden; }
+      overflow: hidden; }
       .container section:nth-of-type(3) div {
         position: relative;
         width: 100%;
         height: 100%;
         overflow: hidden;
         background: transparent;
-        animation: rotate 3s ease-in-out; }
+        animation: rotate 3s ease-in-out;
+        transform-origin: bottom center; }
 
 @keyframes rotate {
   0% {
-    transform: translate(-150%, 50%) rotate(-90deg); }
+    transform: rotate(-180deg); }
   100% {
-    transform: translate(0, 0) rotate(0deg); } }
+    transform: rotate(0deg); } }
         .container section:nth-of-type(3) div:after {
           position: absolute;
           box-shadow: 0 0 0 1vmin #FF3BA7, 0 0 0 2vmin #CC42A2, 0 0 0 3vmin #9f49ac, 0 0 0 4vmin #476EAF, 0 0 0 5vmin #179067, 0 0 0 6vmin #50B517, 0 0 0 7vmin #9ED110, 0 0 0 8vmin #EDE604, 0 0 0 9vmin #FFCC00, 0 0 0 10vmin #FEAC00, 0 0 0 11vmin #FF8100, 0 0 0 12vmin #FF5800;
-          width: 65%;
-          height: 150%;
-          top: 110%;
-          transform: translate(-50%, -50%);
+          width: 60%;
+          height: 120%;
+          top: 100%;
           left: 50%;
+          transform: translate(-50%, -50%);
           content: '';
           border-radius: 50%; }
